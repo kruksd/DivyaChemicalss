@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'file.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Contact Section ======= -->
+<section class="about-section-class"
+  style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/kruksd/divyachemicals/main/contact.png');">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Contact Us</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or queries a member of
+        staff will always be happy to help. Feel free to
+        contact us by telephone or email and we will be sure
+        to get back to you as soon as possible.</p>
+    </div>
+
+  </div>
+
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14765.623370278077!2d73.23029!3d22.300486!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x509954500a490aec!2sDivya%20Chemicals!5e0!3m2!1sen!2sin!4v1661332876925!5m2!1sen!2sin"
+      frameborder="0" allowfullscreen></iframe>
+  </div><!-- End Google Maps -->
+
+  <div class="container">
+
+    <div class="row gy-5 gx-lg-5">
+
+      <div class="col-lg-4">
+
+        <div class="info">
+          <h3>Get in touch</h3>
+          <p>If you have any questions or queries a member of
+            staff will always be happy to help. Feel free to
+            contact us by telephone or email and we will be sure
+            to get back to you as soon as possible.</p>
+
+          <div class="info-item d-flex">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h4>Location:</h4>
+              <p>
+                301, Gaurinandan Complex, <br>
+                Uma Char Rasta, <br>Waghodia Road, Vadodara-390019<br><br>
+              </p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h4>Email:</h4>
+              <a href="mailto:info@divyachem.com">
+                <p>info@divyachem.com</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex">
+            <i class="bi bi-phone flex-shrink-0"></i>
+            <div>
+              <h4>Call:</h4>
+              <a href="tel:+91 93279 35867">
+                <p>+91 93279 35867</p>
+              </a>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8">
+        
+        <form action="{% url 'contactQuery' %}" method="post" role="form" class="php-email-form">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+{% endblock %}

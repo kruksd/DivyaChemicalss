@@ -1,0 +1,131 @@
+<html lang="en">
+  
+{% extends 'file.html' %}
+{% load static %}
+{% block content %}
+<!-- <section class="about-section-class"
+  style="background: linear-gradient(rgba(88, 66, 66, 0.6), rgba(0, 0, 0, 0.6)), url('https://raw.githubusercontent.com/kruksd/divyachemicals/main/blogs.png');background-position: bottom;">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Blogs</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+{% for i in products %}
+<section class="about-section-class" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{i.productHeroImage.url}}');">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Electrical</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+<section>
+  <canvas class="background1" data-aos="fade-up" data-aos-delay="100"></canvas>
+  <div class="container  clientContainer mt-3 mb-3  shadow-lg " style="background-color: white;opacity: 0.9;">
+   
+    <div class="row whyUsDiv">
+      <div class="col-lg-6 col-md-6 col-sm-12 productRowDiv" >
+        {% for i in products %}
+        <img src="https://raw.githubusercontent.com/kruksd/divyachemicals/main/Mechanical%20Hero%20Image.png"
+          class="img-fluid"  alt="">
+          {% endfor %}
+      </div>
+      {% for i in products %}
+      <div class="col-lg-6 col-md-6 col-sm-12 ">
+
+        <h2>
+          {{i.productName}}
+        </h2>
+        <p class="justifyClass">{{i.productDescription}}</p>
+        {% endfor %}
+        
+        <ul>
+          {% for i in productDetails %}
+          <li>{{i}}</li>
+          {% endfor %}
+        </ul>
+       
+      </div>
+     
+    </div>
+  </div>
+ 
+</section>
+
+<script>
+  window.onload = function () {
+    Particles.init
+      ({
+        selector:
+          '.background1',
+        connectParticles: true,
+        color: '#2d4373',
+        speed: 0.5,
+      });
+  };
+</script>
+<script>
+  Particles.
+    init
+    ({
+
+      // normal options
+      selector:
+        '.background1'
+      ,
+      maxParticles:
+        250
+      ,
+
+      // options for breakpoints
+      responsive: [
+        {
+          breakpoint:
+            768
+          ,
+          options: {
+            maxParticles:
+              200
+            ,
+            color:
+              '#48F2E3'
+            ,
+            connectParticles:
+              false
+          }
+        }, {
+          breakpoint:
+            425
+          ,
+          options: {
+            maxParticles:
+              100
+            ,
+            connectParticles:
+              true
+          }
+        }, {
+          breakpoint:
+            320
+          ,
+          options: {
+            maxParticles:
+              0
+
+            // disables particles.js
+          }
+        }
+      ]
+    });
+</script>
+
+{% endblock %}

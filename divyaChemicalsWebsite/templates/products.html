@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'file.html' %}
+{% load static %}
+{% block content %}
+
+{% if 'electrical' in type %}
+<section class="about-section-class" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/kruksd/divyachemicals/main/Mechanical%20Hero%20Image.png');">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Electrical</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+{% if 'mechanical' in type %}
+<section class="about-section-class" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/kruksd/divyachemicals/main/Mechanical%20Hero%20Image.png');">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Mechanical</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+{% if 'civil' in type %}
+<section class="about-section-class" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://raw.githubusercontent.com/kruksd/divyachemicals/main/Mechanical%20Hero%20Image.png');">
+  <div class="hero-image1">
+    <div class="carousel-container">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Civil</h2>
+        <p class="animate__animated animate__fadeInUp">Epoxy (EP) and Polyurethane (PU) flooring are two of the most
+          common industrial floorings used in Singapore and around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+
+<section id="team" class="bg-light">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <!-- <h2>Featured Segments</h2>
+      <p>Divya Chemicals provides wide range of products and solutions for corrosion protection,concrete protection,epoxy/pu flooring,passive fire protection and maintainence/repaire of products to a number of industries  </p> -->
+    </div>
+
+    <div class="row">
+      {% for i in products %}
+      <div class="col-lg-3 col-md-6">
+   
+     
+            <div class="member shadow-lg" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="specialHeading">{{i.productName}}</h3>
+              <div class="specialHeadingProducts"> <a class="" href="/products/electrical/{{i.productName}}" style="color: #000;">Know More!</a></div>
+              <a href="/products/electrical/{{i.productName}}">
+              <div class="post-img">
+                <img src="{{i.productImage.url}}"
+                  class="img-fluid" alt="">
+              </div>
+              </a>
+            </div>
+      
+         
+       
+        
+      </div>
+      {% endfor %}
+
+      
+    
+
+    </div>
+  </div>
+</section><!-- End Team Section -->
+
+  {% endblock %}
